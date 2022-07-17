@@ -706,6 +706,10 @@ html, body {
     margin: 0 0 4em 0 !important;
     flex-wrap: wrap;
   }
+
+  .header-text-box {
+    width: 95%;
+  }
 /* Header-sections */
   .about-me-row {
     margin: 0 2em 4em 1.5em;
