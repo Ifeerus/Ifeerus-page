@@ -58,6 +58,15 @@ html, body {
   align-items: center;
 }
 
+.translate-link {
+  text-decoration: none;
+  color: #EEEEEE;
+}
+
+.translate-link:hover {
+  color: #00ADB5;
+}
+
 .header-menu__list {
   display: flex;
   position: relative;
@@ -164,6 +173,10 @@ html, body {
   background: linear-gradient(271deg,#00ADB5 30%,#a162e8 50%,#f093b0 70%,#00ADB5 94%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.header-text.ru {
+  font-weight: 800;
 }
 
 .header-sub {
@@ -276,7 +289,11 @@ html, body {
 .line-dec {
   width: 75px;
   height: 3px;
-  background-color: #00ADB5;
+  display: block;
+  background: #b097f2;
+  transform: translate3d(0,5px,0);
+  transition: all .2s cubic-bezier(.175,.885,.32,1.275);
+  transform: translateZ(0) scale3d(1.1,1.1,1.1) rotate(-2deg);
   margin: 15px 0px 40px 0px;
 }
 
@@ -373,7 +390,7 @@ html, body {
 }
 
 .projects-head-text {
-  color: #00ADB5;
+  color: #b097f2;
   font-size: 2rem;
   margin: 0;
   font-weight: bold;
@@ -710,6 +727,10 @@ html, body {
   .header-text {
     font-size: 3.6rem;
     text-align: center;
+  }
+
+  .header-text.ru {
+    font-size: 3rem;
   }
 
   .header-sub {
