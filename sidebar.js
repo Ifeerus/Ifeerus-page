@@ -16,3 +16,16 @@ menuBtn.addEventListener("click", () => {
     }
 });
 
+
+const menuLinks = document.querySelectorAll(".header-menu__link");
+
+for(var i=0; i<menuLinks.length; i++) {
+    menuLinks[i].addEventListener("click", () => {
+        if (menuOpen) {
+            menuBtn.classList.remove("open");
+            menu.classList.remove("active");
+            document.querySelector("body").classList.remove("lock");
+            menuOpen = false;
+        }
+    });
+}

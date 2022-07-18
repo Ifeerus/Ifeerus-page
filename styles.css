@@ -42,10 +42,10 @@ html, body {
 .header-menu:before {
   content: '';
   position: absolute;
-  top: 0;
+  top: -5px;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 110%;
   background-color: #222831;
   z-index: 2;
 }
@@ -660,7 +660,7 @@ html, body {
     overflow: auto;
     background-color: #393E46;
     padding: 70px 10px 20px 0px;
-    transition: all .5s ease-in-out;
+    transition: all .37s ease-in-out;
   }
 
   .header-menu__menu.active {
@@ -714,6 +714,7 @@ html, body {
 
   .header-sub {
     text-align: center;
+    padding: 0px 7px;
   }
 
 /* Header-sections */
