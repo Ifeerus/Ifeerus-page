@@ -707,9 +707,15 @@ html, body {
     flex-wrap: wrap;
   }
 
-  .header-text-box {
-    width: 95%;
+  .header-text {
+    font-size: 3.6rem;
+    text-align: center;
   }
+
+  .header-sub {
+    text-align: center;
+  }
+
 /* Header-sections */
   .about-me-row {
     margin: 0 2em 4em 1.5em;
