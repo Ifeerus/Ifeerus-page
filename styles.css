@@ -805,18 +805,18 @@ html, body {
 
 @media (max-width:440px) {
   .project1 img {
-    content: url("images/CoolStore-mob.jpg");
+    content: url("images/food-shop-mob.jpg");
   }
 
   .project2 img {
-    content: url("images/SimonGame-mob.jpg");
+    content: url("images/employee-manager-mob.jpg");
   }
 
   .project3 img {
-    content: url("images/DiceGame-mob.jpg");
+    content: url("images/SimonGame-mob.jpg");
   }
 
   .project4 img {
-    content: url("images/TinDog-mob.jpg");
+    content: url("images/DiceGame-mob.jpg");
   }
 }
