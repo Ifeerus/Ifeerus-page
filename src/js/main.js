@@ -109,11 +109,11 @@ const sections = document.querySelectorAll("section[id]");
 function scrollActive() {
     const scrollY = window.pageYOffset;
 
+    
     sections.forEach((current) => {
         const sectionHeight = current.offsetHeight;
         const sectionTop = current.offsetTop - 50;
         const sectionId = current.getAttribute("id");
-
         if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
             document
                 .querySelector(".nav__menu a[href*=" + sectionId + "]")
@@ -186,6 +186,9 @@ const TOKEN = "6041808216:AAHvzPNEHpsek9Vd60KjML-0MWy7z3C-_j8";
 const CHAT_ID = "-1001885740727";
 const URI_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
 
+const notification = document.querySelector('.notification');
+// const message = document.querySelector('.notification__message');
+
 document.getElementById("tg").addEventListener("submit", function (e) {
     e.preventDefault();
 
@@ -209,10 +212,18 @@ document.getElementById("tg").addEventListener("submit", function (e) {
     fetch(URI_API, options)
         .then((response) => response.json())
         .then(() => {
-            alert("Message was sent!");
+            notification.innerHTML = '<h3 class="notification__message">Message sent <i class="uil uil-check-circle"></i></h3>';
+            notification.classList.add('show-notif-success');
+            setTimeout(() => {
+                notification.classList.remove('show-notif-success');
+            }, 4000);
         })
         .catch((err) => {
-            console.warn(err);
+            notification.innerHTML = '<h3 class="notification__message">Sending error <i class="uil uil-times-circle"></i></h3>';
+            notification.classList.add('show-notif-error');
+            setTimeout(() => {
+                notification.classList.remove('show-notif-error');
+            }, 4000);
         })
         .finally(() => {
             this.name.value = "";
