@@ -109,7 +109,6 @@ const sections = document.querySelectorAll("section[id]");
 function scrollActive() {
     const scrollY = window.pageYOffset;
 
-    
     sections.forEach((current) => {
         const sectionHeight = current.offsetHeight;
         const sectionTop = current.offsetTop - 50;
@@ -182,12 +181,19 @@ themeButton.addEventListener("click", () => {
 
 // sending message
 
+const validation = (name, msg) => {
+    if (name.trim().length === 0 || name.trim().length === 0) {
+        return false;
+    } else {
+        return true;
+    }
+};
+
 const TOKEN = "6041808216:AAHvzPNEHpsek9Vd60KjML-0MWy7z3C-_j8";
 const CHAT_ID = "-1001885740727";
 const URI_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
 
-const notification = document.querySelector('.notification');
-// const message = document.querySelector('.notification__message');
+const notification = document.querySelector(".notification");
 
 document.getElementById("tg").addEventListener("submit", function (e) {
     e.preventDefault();
@@ -209,25 +215,39 @@ document.getElementById("tg").addEventListener("submit", function (e) {
         }),
     };
 
-    fetch(URI_API, options)
-        .then((response) => response.json())
-        .then(() => {
-            notification.innerHTML = '<h3 class="notification__message">Message sent <i class="uil uil-check-circle"></i></h3>';
-            notification.classList.add('show-notif-success');
-            setTimeout(() => {
-                notification.classList.remove('show-notif-success');
-            }, 4000);
-        })
-        .catch((err) => {
-            notification.innerHTML = '<h3 class="notification__message">Sending error <i class="uil uil-times-circle"></i></h3>';
-            notification.classList.add('show-notif-error');
-            setTimeout(() => {
-                notification.classList.remove('show-notif-error');
-            }, 4000);
-        })
-        .finally(() => {
-            this.name.value = "";
-            this.email.value = "";
-            this.message.value = "";
-        });
+    if (validation(this.name.value, this.message.value)) {
+        fetch(URI_API, options)
+            .then((response) => response.json())
+            .then(() => {
+                notification.innerHTML =
+                    '<h3 class="notification__message">Message sent <i class="uil uil-check-circle"></i></h3>';
+                notification.classList.add("show-notif-success");
+                setTimeout(() => {
+                    notification.classList.remove("show-notif-success");
+                }, 4000);
+            })
+            .catch((err) => {
+                notification.innerHTML =
+                    '<h3 class="notification__message">Sending error <i class="uil uil-times-circle"></i></h3>';
+                notification.classList.add("show-notif-error");
+                setTimeout(() => {
+                    notification.classList.remove("show-notif-error");
+                }, 4000);
+            })
+            .finally(() => {
+                this.name.value = "";
+                this.email.value = "";
+                this.message.value = "";
+            });
+    } else {
+        notification.innerHTML =
+            '<h3 class="notification__message">Fill in all the fields <i class="uil uil-times-circle"></i></h3>';
+        notification.classList.add("show-notif-error");
+        setTimeout(() => {
+            notification.classList.remove("show-notif-error");
+        }, 4000);
+        this.name.value = "";
+        this.email.value = "";
+        this.message.value = "";
+    }
 });
