@@ -182,7 +182,7 @@ themeButton.addEventListener("click", () => {
 // sending message
 
 const validation = (name, msg) => {
-    if (name.trim().length === 0 || name.trim().length === 0) {
+    if (name.trim().length === 0 || msg.trim().length === 0) {
         return false;
     } else {
         return true;
