@@ -550,19 +550,31 @@ img {
 }
 
 .skills__html {
-    width: 90%;
+    width: 95%;
 }
 
 .skills__css {
-    width: 90%;
+    width: 95%;
 }
 
 .skills__js {
-    width: 90%;
+    width: 95%;
+}
+
+.skills__ts {
+    width: 75%;
 }
 
 .skills__react {
-    width: 85%;
+    width: 90%;
+}
+
+.skills__next {
+    width: 80%;
+}
+
+.skills__node {
+    width: 60%;
 }
 
 .skills__php {
@@ -577,12 +589,16 @@ img {
     width: 80%;
 }
 
-.skills__webpack {
+.skills__tailwind {
     width: 75%;
 }
 
+.skills__webpack {
+    width: 85%;
+}
+
 .skills__redux {
-    width: 70%;
+    width: 95%;
 }
 
 .skills__git {
@@ -598,7 +614,7 @@ img {
 }
 
 .skills__photoshop {
-    width: 60px;
+    width: 40%;
 }
 
 .skills__close .skills__list {
